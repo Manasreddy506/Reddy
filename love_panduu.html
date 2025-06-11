@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For My Panduuu 💖</title>
+  <style>
+    body {
+      background-color: #fff0f5;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      text-align: center;
+      overflow: hidden;
+    }
+    button {
+      margin-top: 40px;
+      font-size: 1.5em;
+      padding: 12px 30px;
+      background-color: #ff4da6;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #e60073;
+    }
+    #surprise {
+      display: none;
+      margin-top: 30px;
+    }
+    img {
+      max-width: 90%;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+    h1 {
+      font-size: 2.5em;
+      color: #cc0066;
+      margin-top: 20px;
+    }
+    .heart {
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      position: absolute;
+      animation: floatUp 6s infinite ease-in;
+      transform: rotate(45deg);
+      border-radius: 50% 50% 0 0;
+    }
+    .heart::after,
+    .heart::before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      position: absolute;
+      border-radius: 50%;
+    }
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(100vh) scale(1); opacity: 1; }
+      100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <h2>Hey Panduuu... Click the button 👇</h2>
+  <button onclick="showSurprise()">Click to open</button>
+
+  <div id="surprise">
+    <img src="C:\Users\venug\Downloads\WhatsApp Image 2025-06-11 at 23.25.37_63795db9.jpg" alt="My Love">
+    <h1>I lovee youuu panduuuu...! ❤️</h1>
+  </div>
+
+  <script>
+    function showSurprise() {
+      document.getElementById("surprise").style.display = "block";
+      for (let i = 0; i < 40; i++) {
+        let heart = document.createElement("div");
+        heart.className = "heart";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDelay = Math.random() * 5 + "s";
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 6000);
+      }
+    }
+  </script>
+</body>
+</html>
